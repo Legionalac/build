@@ -1,10 +1,12 @@
 - hosts: localhost
   vars:
-    username: "theprimeagen"
-    email: "theprimeagen@gmail.com"
-    ssh_key_filename: "id_theprimeagen_rsa"
+    username: "nikola"
+    email: "nikolapavicevic95@gmail.com"
+    ssh_key_filename: "id_nikola_rsa"
     config: "{{ lookup('ansible.builtin.env', 'XDG_CONFIG') }}"
     home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    personal: "{{ home }}/personal"
+    dev: "{{ personal }}/dev"
     zsh_dependencies: []
   tasks:
   - name: Ensure Zsh with dependencies are installed
@@ -12,12 +14,6 @@
       name: "{{ ['zsh'] + zsh_dependencies }}"
       state: present
       update_cache: yes
-    become: true
-
-  - name: Ensure zsh is the default shell
-    user:
-      name: "{{ username }}"
-      shell: "/usr/bin/zsh"
     become: true
 
   - name: Download Oh My Zsh installation script

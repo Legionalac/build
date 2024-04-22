@@ -12,7 +12,7 @@ export GOPATH=$HOME/.local/go
 export GIT_EDITOR=$VIM
 export DENO_INSTALL="$HOME/.deno"
 export N_PREFIX="$HOME/.local/n"
-export FLYCTL_INSTALL="/home/theprimeagen/.fly"
+export FLYCTL_INSTALL="/home/nikola/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 # Where should I put you?
